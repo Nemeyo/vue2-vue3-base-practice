@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+
+        <h2>{{count}}</h2>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                // 已經為響應式
+                msg: '你好,nemeyo！',
+                count: 100
+            }
+
+            // data中的資訊式會被添加到實例上的
+            // 可以在f12那邊修改內容，刷新後會變回來，以後可以用按鍵之類的改
+        })
+    </script>
+</body>
+
+</html>

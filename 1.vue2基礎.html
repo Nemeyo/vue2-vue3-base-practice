@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 不會被渲染 -->
+        <h1>{{msg}}</h1>
+    </div>
+    <div id="app">
+        <!-- 這裡會寫一些用於渲染的code邏輯 -->
+        <h1>{{msg}}</h1>
+        <h3>{{count}}</h3>
+    </div>
+
+    <!-- 引入開發版本，含完整註釋和警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        // 一旦引入vue包，在全局環境，就有了vue構造函數
+
+        const app = new Vue({
+            // 通過el配置選擇器，就有了vue的構造函數
+            el: '#app',
+            // 通過data提供數據
+            data: {
+                msg: "Hello Vue!!",
+                count: 666
+            }
+        })
+    </script>
+
+</body>
+
+</html>

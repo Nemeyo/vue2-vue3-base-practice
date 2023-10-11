@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 400px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-html="表達式"是使用網址的 
+        指令為v-開頭-->
+        <div v-html="msg"></div>
+        <!-- 控制顯示隱藏 本質是控制CSS 適合頻繁切換的時候-->
+        <div v-show="flag1" class="box">我是v-show控制的</div>
+
+        <!-- 控制顯示隱藏 條件渲染 本質是根據判斷條件來創造&移除 不頻繁切換的內容-->
+        <div v-if="flag1" class="box">我是v-if控制的</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                msg: '<a href="http://www.youtube.com"> <h1>Youtube</h1></a> ',
+                flag: false,
+                flag1: true
+            }
+        })
+
+    </script>
+</body>
+
+</html>

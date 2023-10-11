@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 表達式為vue的一種模板語法
+        作用：利用表達式進行插值渲染
+        語法:{{表達式}}
+
+        不能在標籤裡面使用
+        -->
+        <h2>{{nickname}}</h2>
+        <h3>{{nickname.toUpperCase()}}</h3>
+        <p>{{nickname+"你好"}}</p>
+        <p>{{age>=18 ?'成年':'未成年'}}</p>
+        <p>{{friend.name + friend.desc}}</p>
+        <br>
+        <p title="abc">我是P標籤</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                nickname: 'Nemeyo',
+                age: 18,
+                friend: {
+                    name: 'Lamagi',
+                    desc: "熱愛休息"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
