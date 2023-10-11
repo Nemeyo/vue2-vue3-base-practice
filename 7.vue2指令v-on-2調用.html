@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>
+            <p>帳戶餘額:{{money}}</p>
+            <button @click="buy(50)">
+                咖啡50元
+            </button>
+            <button @click="buy(20)">
+                可樂20元
+            </button>
+        </h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                money: 10000,
+            },
+            methods: {
+                buy(price) {
+                    this.money -= price
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
