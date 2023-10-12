@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- v-for="(item,index) in 數組" -->
+    <div id="app">
+        <h1>津津漫畫店</h1>
+        <h2>
+            <ul>
+                <li v-for="(item, index) in list">
+                    {{item}} - {{index}}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="item in list">
+                    {{item}}
+                </li>
+            </ul>
+        </h2>
+        <hr>
+        <h1>
+            <ul>
+                <li v-for="(item,index) in booklist">
+                    <span>{{item.name}}</span>
+                    <span>{{item.author}}</span>
+                    <!-- 註冊點擊事件 通過id進行刪除 -->
+                    <button @click="del(item.id)">刪除</button>
+                </li>
+            </ul>
+        </h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                list: ['咒術', '火影', 'JOJO', '黑執事'],
+                booklist: [
+                    { id: 1, name: '海賊王', author: '尾田' },
+                    { id: 2, name: '家教', author: '天野' },
+                    { id: 3, name: '銀魂', author: '空知' },
+                    { id: 4, name: '死神', author: '久保' },
+                ]
+            },
+            methods: {
+                del(id) {
+                    // filter:根據條件過濾
+                    // this.booklist.filter(item => item.id !== id)
+                    this.booklist = this.booklist.filter(
+                        item => item.id !== id
+                    )
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
