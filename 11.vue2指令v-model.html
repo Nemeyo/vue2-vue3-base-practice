@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 資訊綁定 快速獲取或設置表單元素內容 
+        v-model 可以讓資料和圖片形成雙向綁定
+        變化會自動更新
+        可快速取得或設置表單元素的內容
+    -->
+    <div id="app">
+        帳號: <input type="text" name="" id="" v-model="username"><br><br>
+        密碼: <input type="password" name="" id="" v-model="password"><br><br>
+        <button @click="login">登入</button>
+        <button @click="reset">重置</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                password: ''
+            },
+            methods: {
+                login() {
+                    console.log(this.username, this.password)
+                },
+                reset() {
+                    this.username = '',
+                        this.password = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
