@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h3>資料</h3>
+        姓名：
+        <input type="text" v-model="username">
+        <br><br>
+        是否單身：
+        <input type="checkbox" v-model="issingle">
+        <br><br>
+        性別：
+        <input v-model="gender" type="radio" name="gender" value="1">男
+        <input v-model="gender" type="radio" name="gender" value="2">女
+        <br><br>
+
+        所在縣市：
+        <select v-model="city" name="" id="">
+            <option value="041">台中</option>
+            <option value="042">彰化</option>
+            <option value="051">雲林</option>
+            <option value="052">嘉義</option>
+        </select>
+        <br><br>
+        自我描述：
+        <textarea v-model="desc" name="" id="" cols="30" rows="10"></textarea>
+        <br><br>
+        <button>立即註冊</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                issingle: true,
+                gender: '',
+                city: '',
+                desc: '',
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

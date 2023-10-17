@@ -5,15 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #000;
+            font-size: 30px;
+            margin-top: 10px;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .big {
+            width: 300px;
+            height: 300px;
+        }
+
+        a {
+            font-size: 30px;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app"></div>
+    <!-- class = "對象/數組" 單個用對象 一群用數組 -->
+    <div id="app">
+        <!-- <div class="box" :class="{pink:true,big:true}">
+            津津
+        </div>
+        <div class="box" :class="['pink','big']">
+            津津
+        </div> -->
+        <ul>
+            <li v-for="(item,index) in list" :key="item.id" @click="activeIndex = index">
+                <a :class="{active:index === activeIndex}" href="#">{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     <script>
         const app = new Vue({
             el: '#app',
-            data: {},
+            data: {
+                activeIndex: 0,
+                list: [
+                    { id: 1, name: '賣場' },
+                    { id: 2, name: '特價' },
+                    { id: 3, name: '品項' },
+                ]
+            },
             methods: {}
         })
     </script>
